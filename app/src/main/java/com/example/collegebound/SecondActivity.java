@@ -3,11 +3,13 @@ package com.example.collegebound;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -21,6 +23,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     private ArrayList<Ivy> ivyList;
     private ArrayList<String> titleList;
     private Adapter adapter;
+    private int[] images = {R.drawable.uiuc};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,4 +57,12 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
         startActivity(intent);
     }
+
+    public View getView() {
+        View view = getLayoutInflater().inflate(R.layout.activity_second, null);
+        ImageView imgView = (ImageView) view.findViewById(R.id.imageView);
+        imgView.setImageResource(images[0]);
+        return view;
+    }
+
 }
