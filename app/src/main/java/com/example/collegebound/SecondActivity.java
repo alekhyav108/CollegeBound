@@ -21,7 +21,15 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     private ArrayList<Ivy> ivyList;
     private ArrayList<String> titleList;
     private Adapter adapter;
-    private int[] images = {R.drawable.uiuc};
+    private int[] images = {R.drawable.cornell,
+            R.drawable.dartmouth,
+            R.drawable.harvard,
+            R.drawable.columbia,
+            R.drawable.penn,
+            R.drawable.yale,
+            R.drawable.brown,
+            R.drawable.princeton
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +64,8 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         startActivity(intent);
     }
 
-    public View getView() {
+
+    public View getView(int position) {
         View view = getLayoutInflater().inflate(R.layout.activity_second, null);
         ImageView imgView = (ImageView) view.findViewById(R.id.collegePic);
         imgView.setImageResource(images[0]);
