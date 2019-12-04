@@ -3,7 +3,6 @@ package com.example.collegebound;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -13,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SecondActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -60,7 +58,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
     public View getView() {
         View view = getLayoutInflater().inflate(R.layout.activity_second, null);
-        ImageView imgView = (ImageView) view.findViewById(R.id.imageView);
+        ImageView imgView = (ImageView) view.findViewById(R.id.collegePic);
         imgView.setImageResource(images[0]);
         return view;
     }
