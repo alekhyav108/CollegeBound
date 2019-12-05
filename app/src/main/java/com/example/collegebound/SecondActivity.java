@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -49,7 +51,9 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         lv.setAdapter((ListAdapter) adapter);
 
         lv.setOnItemClickListener(this);
-
+        /*ListView collegeLV = (ListView) findViewById(R.id.lv);
+        CustomAdapter customAdapter = new CustomAdapter();
+        collegeLV.setAdapter(customAdapter); */
     }
         //lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     @Override
@@ -65,10 +69,33 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
 
+   /* class CustomAdapter extends BaseAdapter {
+        @Override
+        public int getCount() {
+            return 0;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            return null;
+        }
+
+    } */
+
     public View getView(int position) {
         View view = getLayoutInflater().inflate(R.layout.activity_second, null);
         ImageView imgView = (ImageView) view.findViewById(R.id.collegePic);
-        imgView.setImageResource(images[0]);
+        imgView.setImageResource(images[position]);
         return view;
     }
 
