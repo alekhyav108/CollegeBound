@@ -30,6 +30,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     private ArrayList<Ivy> ivyList;
     private ArrayList<String> titleList;
     private Adapter adapter;
+    private Vibrator vib;
     private int[] images = {R.drawable.harvard,
             R.drawable.brown,
             R.drawable.yale,
@@ -107,10 +108,10 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
             return view1;
         }
     }
-/*
-    Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
 
     private void phoneVib(int intensity) {
+        vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         int actualIntensity = 0;
 
         switch(intensity) {
@@ -136,10 +137,6 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         }
     }
 
-
-
-
-*/
 
 
 

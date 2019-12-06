@@ -17,6 +17,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/secondact" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="250dp"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ListView
         android:id="@+id/lv"
         android:layout_width="match_parent"
