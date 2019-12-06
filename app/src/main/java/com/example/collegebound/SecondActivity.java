@@ -1,6 +1,7 @@
 package com.example.collegebound;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,16 +9,20 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.VibrationEffect;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.os.Vibrator;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
@@ -31,6 +36,8 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     private ArrayList<String> titleList;
     private Adapter adapter;
     private Vibrator vib;
+    //private int[] progress;
+    //private ProgressBar progressBar = findViewById(R.id.progressBar);
     private int[] images = {R.drawable.harvard,
             R.drawable.brown,
             R.drawable.yale,
@@ -103,6 +110,31 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
             ImageView image = view1.findViewById(R.id.imageView3);
 
             image.setImageResource(images[i]);
+            //if (checkbox is checked, then increase progress bar)
+           /* progressBar.setProgress(progress[i]);
+
+            View row = view;
+            ListView holder = null;
+
+            //this should be the checkbox part
+            final DownloadInfo info = getItem(i);
+
+            if(null == row) {
+                LayoutInflater inflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                row = inflater.inflate(R.layout.activity_second, viewGroup, false);
+
+                holder = new RecyclerView.ViewHolder();
+                holder.progressBar = (ProgressBar) row.findViewById(R.id.progressBar);
+                holder.info = info;
+
+                row.setTag(holder);
+            } else {
+                holder = row.getTag();
+
+                holder.info.setProgressBar(null);
+                holder.info = info;
+                holder.info.setProgressBar(holder.progressBar);
+            }*/
 
 
             return view1;

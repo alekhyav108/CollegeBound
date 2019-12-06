@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/detailsText"
-        android:layout_width="293dp"
-        android:layout_height="204dp"
+        android:layout_width="302dp"
+        android:layout_height="158dp"
         android:fontFamily=""
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -29,8 +29,9 @@
         app:fontFamily="@font/graduate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.762" />
+        app:layout_constraintVertical_bias="0.61" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
