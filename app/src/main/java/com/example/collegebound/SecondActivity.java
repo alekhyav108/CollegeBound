@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.os.Vibrator;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -106,7 +107,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
             return view1;
         }
     }
-
+/*
     Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
     private void phoneVib(int intensity) {
@@ -138,7 +139,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
 
 
-
+*/
 
 
 
