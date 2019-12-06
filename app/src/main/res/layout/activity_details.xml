@@ -7,30 +7,18 @@
     tools:context=".Details">
 
     <ImageView
-        android:id="@+id/collegePic"
-        android:layout_width="411dp"
-        android:layout_height="731dp"
-        android:layout_marginBottom="200dp"
+        android:id="@+id/imageView3"
+        android:layout_width="415dp"
+        android:layout_height="745dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/randompic" />
-
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="148dp"
-        android:layout_height="81dp"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <TextView
         android:id="@+id/detailsText"
@@ -40,9 +28,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintVertical_bias="0.762" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

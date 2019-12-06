@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SecondActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -23,14 +24,14 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     private ArrayList<Ivy> ivyList;
     private ArrayList<String> titleList;
     private Adapter adapter;
-    private int[] images = {R.drawable.cornell,
-            R.drawable.dartmouth,
-            R.drawable.harvard,
-            R.drawable.columbia,
-            R.drawable.penn,
-            R.drawable.yale,
+    private int[] images = {R.drawable.harvard,
             R.drawable.brown,
-            R.drawable.princeton
+            R.drawable.yale,
+            R.drawable.dartmouth,
+            R.drawable.penn,
+            R.drawable.princeton,
+            R.drawable.cornell,
+            R.drawable.columbia
     };
 
     @Override
@@ -51,28 +52,29 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         lv.setAdapter((ListAdapter) adapter);
 
         lv.setOnItemClickListener(this);
-        /*ListView collegeLV = (ListView) findViewById(R.id.lv);
-        CustomAdapter customAdapter = new CustomAdapter();
-        collegeLV.setAdapter(customAdapter); */
+
     }
-        //lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, Details.class);
         String title = ivyList.get(position).getTitle();
         String details = ivyList.get(position).getInfo();
 
+
         intent.putExtra("EXTRA_TITLE", title);
         intent.putExtra("EXTRA_INFO", details);
+        intent.putExtra("image", images[position]);
 
         startActivity(intent);
     }
 
 
-   /* class CustomAdapter extends BaseAdapter {
+    private abstract class CustomAdapter extends BaseAdapter {
         @Override
         public int getCount() {
-            return 0;
+            return images.length;
         }
 
         @Override
@@ -86,17 +88,19 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            return null;
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            View view1 = getLayoutInflater().inflate(R.layout.activity_details, null);
+            ImageView image = view1.findViewById(R.id.imageView3);
+
+            image.setImageResource(images[i]);
+            return view1;
         }
-
-    } */
-
-    public View getView(int position) {
-        View view = getLayoutInflater().inflate(R.layout.activity_second, null);
-        ImageView imgView = (ImageView) view.findViewById(R.id.collegePic);
-        imgView.setImageResource(images[position]);
-        return view;
     }
+
+
+
+
+
+
 
 }
