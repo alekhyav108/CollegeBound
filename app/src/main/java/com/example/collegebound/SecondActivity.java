@@ -3,6 +3,8 @@ package com.example.collegebound;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +29,12 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     private int[] images = {R.drawable.harvard,
             R.drawable.brown,
             R.drawable.yale,
-            R.drawable.dartmouth,
+            R.drawable.dart,
             R.drawable.penn,
             R.drawable.princeton,
             R.drawable.cornell,
-            R.drawable.columbia
+            R.drawable.columbia,
+            R.drawable.uiuc
     };
 
     @Override
@@ -46,10 +49,12 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         for (int i = 0; i < ivyList.size(); i++) {
             String str = ivyList.get(i).getTitle();
             titleList.add(str);
+
         }
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, titleList);
         lv.setAdapter((ListAdapter) adapter);
+
 
         lv.setOnItemClickListener(this);
 
@@ -93,6 +98,8 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
             ImageView image = view1.findViewById(R.id.imageView3);
 
             image.setImageResource(images[i]);
+
+
             return view1;
         }
     }

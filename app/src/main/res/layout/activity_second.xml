@@ -17,18 +17,14 @@
         app:srcCompat="@drawable/secondact" />
 
     <ListView
-        android:id="@+id/colors"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-    </ListView>
-
-    <ListView
         android:id="@+id/lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-162dp"
-        tools:layout_editor_absoluteY="0dp">
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>

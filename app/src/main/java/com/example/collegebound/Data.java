@@ -1,6 +1,7 @@
 package com.example.collegebound;
 
 import android.content.Context;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
