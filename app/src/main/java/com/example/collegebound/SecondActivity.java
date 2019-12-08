@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.os.Vibrator;
@@ -36,8 +37,13 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     private ArrayList<String> titleList;
     private Adapter adapter;
     private Vibrator vib;
-    //private int[] progress;
-    //private ProgressBar progressBar = findViewById(R.id.progressBar);
+    private int[] progress;
+    private ProgressBar progressBar = findViewById(R.id.progressBar);
+
+    //not sure if this should be done in details class
+    private CheckBox check1, check2, check3;
+    private Button chckBtn;
+
     private int[] images = {R.drawable.harvard,
             R.drawable.brown,
             R.drawable.yale,
@@ -111,7 +117,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
             image.setImageResource(images[i]);
             //if (checkbox is checked, then increase progress bar)
-           /* progressBar.setProgress(progress[i]);
+            progressBar.setProgress(progress[i]);
 
             View row = view;
             ListView holder = null;
@@ -124,7 +130,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
                 row = inflater.inflate(R.layout.activity_second, viewGroup, false);
 
                 holder = new RecyclerView.ViewHolder();
-                holder.progressBar = (ProgressBar) row.findViewById(R.id.progressBar);
+                progressBar = (ProgressBar) row.findViewById(R.id.progressBar);
                 holder.info = info;
 
                 row.setTag(holder);
@@ -133,12 +139,47 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
                 holder.info.setProgressBar(null);
                 holder.info = info;
-                holder.info.setProgressBar(holder.progressBar);
-            }*/
+                holder.info.setProgressBar(progressBar);
+            }
 
 
             return view1;
         }
+    }
+
+    public void addListener() {
+        check1 = findViewById(R.id.chckB1);
+        check2 = findViewById(R.id.chckB2);
+        check3 = findViewById(R.id.chckB3);
+        chckBtn = findViewById(R.id.checkBtn);
+
+        chckBtn.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //do stuff w progress bar
+                    }
+                }
+        );
+    }
+
+    private void setProgressValue(final int progress) {
+
+        // set the progress
+        progressBar.setProgress(progress);
+        // thread is used to change the progress value
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                setProgressValue(progress + 10);
+            }
+        });
+        thread.start();
     }
 
 
