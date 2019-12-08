@@ -25,6 +25,7 @@ import android.os.Vibrator;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -37,8 +38,8 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     private ArrayList<String> titleList;
     private Adapter adapter;
     private Vibrator vib;
-    private int[] progress;
-    private ProgressBar progressBar = findViewById(R.id.progressBar);
+    //private int[] progress;
+    //private ProgressBar progressBar = findViewById(R.id.progressBar);
 
     //not sure if this should be done in details class
     private CheckBox check1, check2, check3;
@@ -75,6 +76,8 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
 
         lv.setOnItemClickListener(this);
+        addListener();
+
 
     }
 
@@ -117,7 +120,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
             image.setImageResource(images[i]);
             //if (checkbox is checked, then increase progress bar)
-            progressBar.setProgress(progress[i]);
+           /* progressBar.setProgress(progress[i]);
 
             View row = view;
             ListView holder = null;
@@ -140,7 +143,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
                 holder.info.setProgressBar(null);
                 holder.info = info;
                 holder.info.setProgressBar(progressBar);
-            }
+            }*/
 
 
             return view1;
@@ -158,12 +161,18 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
                     @Override
                     public void onClick(View v) {
                         //do stuff w progress bar
+                        StringBuffer result = new StringBuffer();
+                        result.append("hello").append(check1.isChecked() == true);
+                        result.append("hi").append(check2.isChecked() == true);
+                        result.append("lol").append(check3.isChecked() == true);
+
+                        Toast.makeText(SecondActivity.this, result.toString(), Toast.LENGTH_LONG).show();
                     }
                 }
         );
     }
 
-    private void setProgressValue(final int progress) {
+    /*private void setProgressValue(final int progress) {
 
         // set the progress
         progressBar.setProgress(progress);
@@ -180,7 +189,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
             }
         });
         thread.start();
-    }
+    }*/
 
 
     private void phoneVib(int intensity) {
