@@ -76,7 +76,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
 
         lv.setOnItemClickListener(this);
-        addListener();
+        //addListener();
 
 
     }
@@ -150,7 +150,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         }
     }
 
-    public void addListener() {
+    /*public void addListener() {
         check1 = findViewById(R.id.chckB1);
         check2 = findViewById(R.id.chckB2);
         check3 = findViewById(R.id.chckB3);
@@ -170,7 +170,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
                     }
                 }
         );
-    }
+    }*/
 
     /*private void setProgressValue(final int progress) {
 

@@ -39,17 +39,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="160dp"
         android:text="ACT/SAT Scores"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/chckB2"
-        android:layout_width="135dp"
-        android:layout_height="32dp"
+        android:layout_width="137dp"
+        android:layout_height="31dp"
         android:layout_marginStart="44dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="92dp"
         android:text="Essays"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -59,17 +59,17 @@
         android:layout_width="137dp"
         android:layout_height="35dp"
         android:layout_marginStart="44dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="124dp"
         android:text="Transcript"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/checkBtn"
-        android:layout_width="80dp"
-        android:layout_height="29dp"
+        android:layout_width="84dp"
+        android:layout_height="37dp"
         android:layout_marginEnd="164dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="36dp"
         android:text="@android:string/selectAll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
