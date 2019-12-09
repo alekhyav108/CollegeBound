@@ -56,6 +56,8 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
             R.drawable.uiuc
     };
 
+    private String[] names = {"Harvard", "Brown","Yale","Darthmouth","Penn","Princeton","Cornell","Columbia","UIUC"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,11 +65,16 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
         lv = findViewById(R.id.lv);
 
+
+
+
         ivyList = Data.loadIvy(this);
         titleList = new ArrayList<>();
         for (int i = 0; i < ivyList.size(); i++) {
             String str = ivyList.get(i).getTitle();
+
             titleList.add(str);
+
 
         }
 
@@ -116,9 +123,12 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
             View view1 = getLayoutInflater().inflate(R.layout.activity_details, null);
+            View view2 = getLayoutInflater().inflate(R.layout.activity_second, null);
             ImageView image = view1.findViewById(R.id.imageView3);
+            TextView text = view2.findViewById(R.id.texts);
 
             image.setImageResource(images[i]);
+            text.setText(names[i]);
             //if (checkbox is checked, then increase progress bar)
            /* progressBar.setProgress(progress[i]);
 
