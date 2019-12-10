@@ -51,7 +51,7 @@ public class Details extends AppCompatActivity {
 
         chckBtn = findViewById(R.id.button2);
 
-        chckBtn.setOnClickListener(unused -> phoneVib(0));
+        chckBtn.setOnClickListener(unused -> phoneVib(1));
     }
 
     /*public void addListener() {
