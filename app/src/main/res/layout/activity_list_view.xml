@@ -6,19 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".listView">
 
-    <TextView
+    <CheckedTextView
         android:id="@+id/texts"
-        android:layout_width="336dp"
-        android:layout_height="38dp"
+        android:layout_width="327dp"
+        android:layout_height="46dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="69dp"
-        app:fontFamily="@font/graduate"
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="643dp"
         android:text="TextView"
         android:textSize="24sp"
+        app:fontFamily="@font/graduate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

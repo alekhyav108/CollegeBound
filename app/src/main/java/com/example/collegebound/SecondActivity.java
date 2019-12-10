@@ -65,6 +65,9 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
         lv = findViewById(R.id.lv);
 
+        //delete later if it doesn't work
+        //lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+
         ivyList = Data.loadIvy(this);
         titleList = new ArrayList<>();
         for (int i = 0; i < ivyList.size(); i++) {
@@ -76,11 +79,24 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, titleList);
         lv.setAdapter((ListAdapter) adapter);
 
+        /*lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = ((TextView) view).getText().toString();
+                if (titleList.contains(selectedItem)) {
+                    titleList.remove(selectedItem); //uncheck item
+                } else {
+                    titleList.add(selectedItem);
+                }
+            }
+        }); */
 
+        //KEEP THIS IN CASE IT DOESN'T WORK
         lv.setOnItemClickListener(this);
-        //addListener();
 
-        vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+        //addListener();
+        //vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
 
     }
